@@ -1,15 +1,13 @@
-
+import websocket
 
 # A websockt Emitter
 class WSEmitter():
-	def __init__(self, host, port):
-		self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self.addr = (host, port)
+	def __init__(self, host, port, path):
+		self.ws = websocket.create_connection('ws://' + host + ':' + str(port) + path)
 
 	# Celery task?
 	def send(self, jsonstr):
-		print jsonstr
-		return self.sock.sendto(jsonstr, self.addr)
+		return self.ws.send(jsonstr)
 
 	def close(self):
-		return self.sock.close()
+		return self.ws.close()

@@ -16,9 +16,11 @@ class Emitter:
 		
 		if o.scheme == 'udp':
 			self.sub = UDPEmitter(o.hostname, o.port)
-		# TODO: http, websocket
+
 		if o.scheme == 'ws':
-			self.sub = WSEmitter(o.hostname, o.port)
+			self.sub = WSEmitter(o.hostname, o.port, o.path)
+
+		# TODO: http
 	
 	# Very simple interface,
 	def send(self, obj):

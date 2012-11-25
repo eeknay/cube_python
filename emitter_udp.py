@@ -6,7 +6,6 @@ class UDPEmitter():
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self.addr = (host, port)
 
-	# Celery task?
 	def send(self, jsonstr):
 		return self.sock.sendto(jsonstr, self.addr)
 
