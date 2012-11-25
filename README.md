@@ -25,14 +25,18 @@ emitter = Cube.Emitter('ws://localhost:1080/1.0/event/put')
 emitter.send({"data": {
                       "mem": {
                           "total": 4036177920,
-                          "free": 147902464},
+                          "free": 147902464
+                      },
                       "network": {
                           "eth0": {
                               "rxp": 2584118,
                               "rxb": 2234161298,
                               "txb": 3120755872,
-                              "txp": 2830949}}},
-                      "type": "ws_test"
+                              "txp": 2830949
+                          }
+                      }
+                },
+                "type": "ws_test"
               })
 emitter.close()
 ```
