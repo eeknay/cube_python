@@ -16,7 +16,7 @@ emitter.close()
 
 Example of using Websockets
 ---------------------------
-requires websocket-client (pip install websocket-client)
+requires [websocket-client](https://github.com/liris/websocket-client) (pip install websocket-client)
 
 ```python
 import cube_python as Cube
