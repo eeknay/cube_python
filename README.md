@@ -1,7 +1,7 @@
 cube_python
 ===========
 
-A library for using Cube in Python
+A library for using [Cube](http://square.github.com/cube/) in Python
 
 
 Example using UDP
