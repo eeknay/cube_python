@@ -1,5 +1,6 @@
 from urlparse import urlparse
 from emitter_udp import UDPEmitter
+from emitter_ws import WSEmitter
 import json
 from datetime import datetime
 
@@ -16,6 +17,8 @@ class Emitter:
 		if o.scheme == 'udp':
 			self.sub = UDPEmitter(o.hostname, o.port)
 		# TODO: http, websocket
+		if o.scheme == 'ws':
+			self.sub = WSEmitter(o.hostname, o.port)
 	
 	# Very simple interface,
 	def send(self, obj):
